@@ -14,7 +14,7 @@ const loggedOut = (req, res, next) => {
 
 function authenticate(passport) {
   router.get("/", loggedIn, (req, res) => {
-    res.render("index", { username: req.user.username });
+    res.render("index", { firstname: req.user.firstname });
   });
 
   router.get("/login", loggedOut, (req, res) => {
