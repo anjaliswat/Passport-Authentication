@@ -43,7 +43,7 @@ function authenticate(passport) {
     User.findOne({username: req.body.username},function(err,user){
       if(user)
       {
-        req.flash("Invalid Data");
+        req.flash("That username already exists. Please try a different one!");
         res.redirect('/register')
       }
       else{
